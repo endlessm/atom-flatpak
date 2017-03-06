@@ -65,11 +65,11 @@
 		},
 		{
 		    "type": "file",
-		    "path": "atom/Makefile"
+		    "path": "common/Makefile"
 		},
 		{
 		    "type": "file",
-		    "path": "atom/configure"
+		    "path": "common/configure"
 		}
 	    ]
 	}
