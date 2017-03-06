@@ -72,6 +72,27 @@
 		    "path": "common/configure"
 		}
 	    ]
+	},
+	{
+	    "name": "resources",
+	    "sources": [
+		{
+		    "type": "file",
+		    "path": "common/Makefile"
+		},
+		{
+		    "type": "file",
+		    "path": "common/configure"
+		},
+		{
+		    "type": "file",
+		    "path": "resources/install"
+		},
+		{
+		    "type": "file",
+		    "path": "resources/io.atom.Atom.appdata.xml"
+		}
+	    ]
 	}
     ]
 }

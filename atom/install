@@ -5,10 +5,4 @@ set -e
 prefix=$(cat prefix)
 
 ./script/build --install="${prefix}"
-appdir="${prefix}/share/applications"
-olddesktop="${appdir}/atom.desktop"
-newdesktop="${appdir}/io.atom.Atom.desktop"
-sed -i -e 's/Icon=.*/Icon=io.atom.Atom/' "${olddesktop}"
-mv "${olddesktop}" "${newdesktop}"
 install -D 'resources/app-icons/stable/png/128.png' "${prefix}/share/icons/hicolor/128x128/apps/io.atom.Atom.png"
-install -D 'io.atom.Atom.appdata.xml' "${prefix}/share/appdata/io.atom.Atom.appdata.xml"
