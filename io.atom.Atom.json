@@ -31,7 +31,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.x.org/releases/individual/lib/libxkbfile-1.0.9.tar.bz2"
+                    "url": "https://www.x.org/releases/individual/lib/libxkbfile-1.0.9.tar.bz2",
                     "sha256": "51817e0530961975d9513b773960b4edd275f7d5c72293d5a151ed4f42aeb16a"
                 }
             ]
@@ -61,7 +61,7 @@
 		},
 		{
 		    "type": "patch",
-		    "patch": "0001-Allow-specifying-installation-directory.patch"
+		    "path": "atom/0001-Allow-specifying-installation-directory.patch"
 		},
 		{
 		    "type": "file",
@@ -70,6 +70,10 @@
 		{
 		    "type": "file",
 		    "path": "common/configure"
+		},
+		{
+		    "type": "file",
+		    "path": "atom/install"
 		}
 	    ]
 	},
