@@ -5,4 +5,8 @@ set -e
 prefix=$(cat prefix)
 
 ./script/build --install="${prefix}"
-install -D 'resources/app-icons/stable/png/128.png' "${prefix}/share/icons/hicolor/128x128/apps/io.atom.Atom.png"
+for icon in resources/app-icons/stable/png/*.png
+do
+    size=$(basename "${icon}" | cut -d. -f1)
+    install -D "${icon}" "${prefix}/share/icons/hicolor/${size}x${size}/apps/io.atom.Atom.png"
+done
