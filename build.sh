@@ -4,7 +4,7 @@ set -e
 
 if [[ ! -d repo ]]
 then
-    ostree  init --mode=archive-z2 --repo=repo
+    ostree init --mode=archive-z2 --repo=repo
 fi
 
 flatpak-builder \
