@@ -7,22 +7,14 @@
     "sdk": "org.freedesktop.Sdk",
     "command": "atom",
     "finish-args": [
-        /* Allow access to developer tools */
         "--allow=devel",
         "--talk-name=org.freedesktop.Flatpak",
-        /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
-        /* Open GL */
         "--device=dri",
-        /* Sound access */
         "--socket=pulseaudio",
-        /* We want full fs access */
         "--filesystem=host",
-        /* Chromium uses a socket in tmp for its singleton check */
         "--filesystem=/tmp",
-        /* Needs to talk to the network: */
         "--share=network",
-        /* Notifications with libnotify */
         "--talk-name=org.freedesktop.Notifications"
     ],
     "modules": [
