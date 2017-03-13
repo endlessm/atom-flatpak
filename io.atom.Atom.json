@@ -1,0 +1,116 @@
+{
+    "app-id": "io.atom.Atom",
+    "base": "io.atom.electron.BaseApp",
+    "base-version": "master",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.4",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "atom",
+    "finish-args": [
+        "--allow=devel",
+        "--talk-name=org.freedesktop.Flatpak",
+        "--share=ipc", "--socket=x11",
+        "--device=dri",
+        "--socket=pulseaudio",
+        "--filesystem=host",
+        "--filesystem=/tmp",
+        "--share=network",
+        "--talk-name=org.freedesktop.Notifications"
+    ],
+    "modules": [
+        {
+            "name": "xkbfile",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.x.org/releases/individual/lib/libxkbfile-1.0.9.tar.bz2",
+                    "sha256": "51817e0530961975d9513b773960b4edd275f7d5c72293d5a151ed4f42aeb16a"
+                }
+            ]
+        },
+        {
+            "name": "nodejs",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz",
+                    "sha256": "01dae00dc0faa37a4b7a84098e2f04631827fc42e319eb66ccc3ab1d561ea42d"
+                }
+            ]
+        },
+        {
+            "name": "libgnome-keyring",
+            "config-opts": [ "--disable-static", "--disable-gtk-doc", "--disable-coverage",
+                             "--disable-introspection" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz",
+                    "sha256": "c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783"
+                },
+                {
+                    "type": "patch",
+                    "path": "libgnome-keyring/libgnome-keyring-detect-gcrypt.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoreconf -fi"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "atom",
+            "build-options": {
+                "build-args": [
+                    "--share=network"
+                ]
+            },
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/atom/atom/archive/v1.14.4.tar.gz",
+                    "sha256": "93789e6042187e174dd873432b4ba44e11d72e3cc97c6a6736b4576743c0ce09"
+                },
+                {
+                    "type": "patch",
+                    "path": "atom/0001-Allow-specifying-installation-directory.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "common/Makefile"
+                },
+                {
+                    "type": "file",
+                    "path": "common/configure"
+                },
+                {
+                    "type": "file",
+                    "path": "atom/install"
+                }
+            ]
+        },
+        {
+            "name": "resources",
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "common/Makefile"
+                },
+                {
+                    "type": "file",
+                    "path": "common/configure"
+                },
+                {
+                    "type": "file",
+                    "path": "resources/install"
+                },
+                {
+                    "type": "file",
+                    "path": "resources/io.atom.Atom.appdata.xml"
+                }
+            ]
+        }
+    ]
+}

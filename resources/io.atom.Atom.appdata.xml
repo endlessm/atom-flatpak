@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>io.atom.Atom.desktop</id>
+	<metadata_license>CC-BY-SA-3.0</metadata_license>
+	<project_license>MIT</project_license>
+	<name>Atom Text Editor</name>
+	<summary>A hackable text editor for the 21st Century</summary>
+	<description>
+		<p>
+			Atom is a text and source editor supporting plugins written in Javascript.
+		</p>
+	</description>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/screenshot-main-80d8c9841da6ed11c9d87f31136a4ca9.png</image>
+		</screenshot>
+	</screenshots>
+	<url type="homepage">https://atom.io/</url>
+</component>

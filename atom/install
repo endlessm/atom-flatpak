@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+set -e
+
+prefix=$(cat prefix)
+
+./script/build --install="${prefix}"
+for icon in resources/app-icons/stable/png/*.png
+do
+    size=$(basename "${icon}" | cut -d. -f1)
+    install -D "${icon}" "${prefix}/share/icons/hicolor/${size}x${size}/apps/io.atom.Atom.png"
+done
