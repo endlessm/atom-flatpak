@@ -1,7 +1,7 @@
 {
     "app-id": "io.atom.Atom",
     "base": "io.atom.electron.BaseApp",
-    "base-version": "master",
+    "base-version": "stable",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "1.6",
     "sdk": "org.freedesktop.Sdk",
