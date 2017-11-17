@@ -71,7 +71,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/atom/atom/archive/v1.14.4.tar.gz",
-                    "sha256": "93789e6042187e174dd873432b4ba44e11d72e3cc97c6a6736b4576743c0ce09"
+                    "sha256": "cfa9240a052729246bf3de0cc0e5223e5395563ead13d863c98fb0ad35e2340a"
                 },
                 {
                     "type": "patch",
